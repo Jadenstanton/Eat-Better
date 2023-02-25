@@ -1,7 +1,8 @@
-let application_key = 'f5ba8b0969b7c7cca5906ee1084fa731';
-let application_id = 'f5266155'
-let URL = 'https://api.edamam.com/api/recipes/v2?type=public'
-let creds = 'app_id=f5266155&app_key=f5ba8b0969b7c7cca5906ee1084fa731&imageSize=REGULAR'
+let app_key = 'f5ba8b0969b7c7cca5906ee1084fa731';
+let app_id = 'f5266155'
+let URL = `https://api.edamam.com/api/recipes/v2?type=public&app_key=${app_key}&app_id=${app_id}`
+
+
 
 
 const queryParams = new URLSearchParams();
@@ -11,13 +12,18 @@ const queryParams = new URLSearchParams();
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   const searchInput = document.querySelector('.search.q');
 
+// TODO
+// Add functionality for spedcific checkboxes, allergies, diets, calories, and ndutrients. 
+// They need their classes specialized and their own functions to distinguish them because they have different endpoints
+
+// Add checkbox values to endpoint and keywords
   function updateApiEndpoint(){
     const queryParams = new URLSearchParams();
 
     checkboxes.forEach(function(checkbox) {
       checkbox.addEventListener('change', function() {
         if (checkbox.checked) {
-          queryParams.append('&health', checkbox.value);
+          queryParams.append('health', checkbox.value);
         } else {
           queryParams.delete('health');
         }
@@ -29,11 +35,13 @@ const queryParams = new URLSearchParams();
         }
       
           
-        let url = `${URL}${queryParams.toString()}`;
-        console.log(url);
+        let url = `${URL}&${queryParams.toString()}`;
+        url = encodeURI(url);
+        console.log(encodeURI(url));
         // send request to API using updated url
-         finalUrl = `${url}&${creds}`;
+        //  finalUrl = `${url}&${creds}`;
 
+        window.localStorage.setItem('apiURL', url);
       });
     });
   }
@@ -44,22 +52,34 @@ checkboxes.forEach((checkbox) => {
   // console.log(url);
 });
 
+// Add keyword values to url
 searchInput.addEventListener("keydown", function(event) {
+  queryParams.delete('q');
   if (event.code === "Enter") {
     event.preventDefault();
-    updateApiEndpoint();
-    const url = `${URL}?${queryParams.toString()}`;
-    console.log(url);
-    // send request to API using updated url
+    if (searchInput.value) {
+      queryParams.append('q', searchInput.value);
+    }
+    let url = `${URL}&${queryParams.toString()}`;
+        url = encodeURI(url);
+        console.log(encodeURI(url));
+        // send request to API using updated url
+        //  finalUrl = `${url}&${creds}`;
+
+        window.localStorage.setItem('apiURL', url);
+    // updateApiEndpoint();
   }
 });
 
 
+
+// Search button 
 function searchRecipes() {
   // const url = `${URL}?${queryParams.toString()}`;
-  console.log(finalUrl);
+  let getobj = window.localStorage.getItem('apiURL');
+  console.log(getobj);
 
-  fetch(finalUrl)
+  fetch(getobj)
     .then(response => response.json())
     .then(data => {
       console.log(data);
@@ -70,8 +90,7 @@ function searchRecipes() {
 
 const apiSearchButton = document.getElementById("search-btn");
 apiSearchButton.addEventListener("click", searchRecipes);
-let finalUrl ="";
-
+let url ="";
 
 
 // function onPageLoad(){
