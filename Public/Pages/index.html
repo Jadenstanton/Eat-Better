@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/Public/Styles/nav.css" />
+    <link rel="stylesheet" href="/Public/Styles/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="/Public/nav.js"></script>
+    <title>Eat Better</title>
+  </head>
+
+  <body>
+    <!-- <div class="container">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="movie-name" placeholder="Search">
+                <button id="search-btn">Search</button>
+            </div>
+            <div id="result"></div>
+        </div>
+    </div> -->
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-3 facets-column">
+                        <div class="sticky-container lv">
+                            <p>hi</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-9">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+      <a class="navbar-brand navbar-logo" href="#">Home</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <div class="hori-selector">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <li class="nav-item active">
+            <a class="nav-link" href="javascript:void(0);"
+              ><i class="fas fa-tachometer-alt"></i>Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Public/Pages/recipes.html"
+              ><i class="far fa-address-book"></i>Recipe Book</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Public/Pages/calendar.html"
+              ><i class="far fa-clone"></i>Calendar</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main-container">
+      <div class="row" style="height: 100%">
+        <div class="col-md-3 left-col" style="display: flex; position: sticky">
+          <div
+            class="card"
+            style="
+              margin: 0px 0 20px 0px;
+              display: flex;
+              flex-direction: column;
+              height: 67%;
+            "
+          >
+            <div class="search-container" style="margin: 0px 0 0px 0px">
+              <button id="search-btn">Search</button>
+            </div>
+            <div class="meal-type">
+              <strong>Meal-Type</strong>
+              <div class="col-md-4 meal-check">
+                <label class="checkbox-button">
+                  <input
+                    type="checkbox"
+                    class="meal checkbox-button__input"
+                    value="breakfast"
+                  />
+                  <span class="checkbox-button__control"></span>
+                  <span class="checkbox-button__label">Breakfast</span>
+                  <span
+                    class="control-info tooltip3"
+                    title="No alcohol used or contained"
+                  ></span>
+                </label>
+              </div>
+              <div class="col-md-4 meal-check">
+                <label class="checkbox-button">
+                  <input
+                    type="checkbox"
+                    class="meal checkbox-button__input"
+                    value="brunch"
+                  />
+                  <span class="checkbox-button__control"></span>
+                  <span class="checkbox-button__label">Brunch</span>
+                  <span
+                    class="control-info tooltip3"
+                    title="No alcohol used or contained"
+                  ></span>
+                </label>
+              </div>
+              <div class="col-md-4 meal-check">
+                <label class="checkbox-button">
+                  <input
+                    type="checkbox"
+                    class="meal checkbox-button__input"
+                    value="lunch/dinner"
+                  />
+                  <span class="checkbox-button__control"></span>
+                  <span class="checkbox-button__label">Lunch/Dinner</span>
+                  <span
+                    class="control-info tooltip3"
+                    title="No alcohol used or contained"
+                  ></span>
+                </label>
+              </div>
+              <div class="col-md-4 meal-check">
+                <label class="checkbox-button">
+                  <input
+                    type="checkbox"
+                    class="meal checkbox-button__input"
+                    value="Snack"
+                  />
+                  <span class="checkbox-button__control"></span>
+                  <span class="checkbox-button__label">Snack</span>
+                  <span
+                    class="control-info tooltip3"
+                    title="No alcohol used or contained"
+                  ></span>
+                </label>
+              </div>
+              <div class="col-md-4 meal-check">
+                <label class="checkbox-button">
+                  <input
+                    type="checkbox"
+                    class="meal checkbox-button__input"
+                    value="Teatime"
+                  />
+                  <span class="checkbox-button__control"></span>
+                  <span class="checkbox-button__label">Teatime</span>
+                  <span
+                    class="control-info tooltip3"
+                    title="No alcohol used or contained"
+                  ></span>
+                </label>
+              </div>
+            </div>
+            <div class="dropdown" id="heading1">
+              <h5 class="mb-0">
+                <button
+                  onclick="toggleDropdown('searchDropdown')"
+                  class="dropbtn"
+                >
+                  Searching by keyword
+                </button>
+              </h5>
+              <div id="searchDropdown" class="dropdown-content">
+                <!-- <div class="card-body"> -->
+                <div class="desc">
+                  Enter what you have eaten, like
+                  <span>"coffee and croissant"</span> or
+                  <span>"chicken enchilada"</span> to see how it works. There's
+                  accurate, data tens of thousands of foods, including
+                  international dishes.
+                </div>
+                <div class="desc-title">Keywords</div>
+                <input
+                  type="text"
+                  placeholder="Type one or more keywords"
+                  class="search q"
+                />
+                <span class="input-group-addon"
+                  ><i class="bx bx-sm bx-search-alt"></i
+                ></span>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="dropdown" id="heading2">
+              <h5 class="mb-0">
+                <button onclick="toggleDropdown('allDropdown')" class="dropbtn">
+                  Allergies
+                </button>
+              </h5>
+              <div id="allDropdown" class="dropdown-content">
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="alcohol-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Alcohol-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No alcohol used or contained"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="celery-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Celery-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Does not contain celery or derivatives"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="crustacean-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Crustacean-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Does not contain crustaceans (shrimp, lobster etc.) or derivatives"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="dairy-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Dairy-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No dairy; No lactose"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="egg-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Egg-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No eggs or products containing eggs"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="fish-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Fish-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No fish or fish derivatives"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="gluten-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Gluten-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No ingredients containing gluten"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="lupine-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Lupine-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Does not contain lupine or derivatives"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="mustard-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Mustard-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Does not contain mustard or derivatives"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="peanut-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Peanut-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No peanuts or products containing peanuts"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="sesame-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Sesame-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Does not contain sesame seed or derivatives"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="shellfish-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Shellfish-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No shellfish or shellfish derivatives"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="soy-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Soy-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No soy or products containing soy"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="tree-nut-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Tree-Nut-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No tree nuts or products containing tree nuts"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="wheat-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Wheat-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No wheat, can have gluten though"
+                    ></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown" id="heading3">
+              <h5 class="mb-0">
+                <button
+                  onclick="toggleDropdown('dietDropdown')"
+                  class="dropbtn"
+                >
+                  Diets
+                </button>
+              </h5>
+              <div id="dietDropdown" class="dropdown-content">
+                <div class="col-md-4 diet-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="diet checkbox-button__input"
+                      value="balanced"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Balanced</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Protein/Fat/Carb values in 15/35/50 ratio"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 diet-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="diet checkbox-button__input"
+                      value="high-fiber"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">High-Fiber</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="More than 5g fiber per serving"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 diet-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="diet checkbox-button__input"
+                      value="high-protein"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">High-Protein</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="More than 50% of total calories from proteins"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="keto-friendly"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Keto</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Maximum 7 grams of net carbs per serving"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="kidney-friendly"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Kidney friendly</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Per serving – phosphorus less than 250 mg AND potassium less than 500 mg AND sodium: less than 500 mg"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="kosher"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Kosher</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Contains only ingredients allowed by the kosher diet. However it does not guarantee kosher preparation of the ingredients themselves"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 diet-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="diet checkbox-button__input"
+                      value="low-carb"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Low-Carb</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Less than 20% of total calories from carbs"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 diet-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="diet checkbox-button__input"
+                      value="low-fat"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Low-Fat</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Less than 15% of total calories from fat"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="low-potassium"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Low potassium</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Less than 150mg per serving"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 diet-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="diet checkbox-button__input"
+                      value="low-sodium"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Low-Sodium</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Less than 140mg Na per serving"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="No-oil-added"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">No oil added</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No oil added except to what is contained in the basic ingredients"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="low-sugar"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">No-sugar</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No simple sugars – glucose, dextrose, galactose, fructose, sucrose, lactose, maltose"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="paleo"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Paleo</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Excludes what are perceived to be agricultural products; grains, legumes, dairy products, potatoes, refined salt, refined sugar, and processed oils"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="pescatarian"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Pescatarian</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Does not contain meat or meat based products, can contain dairy and fish"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="pork-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Pork-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Does not contain pork or derivatives"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="red-meat-free"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Red meat-free</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Does not contain beef, lamb, pork, duck, goose, game, horse, and other types of red meat or products containing red meat."
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="sugar-conscious"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Sugar-conscious</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="Less than 4g of sugar per serving"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="vegan"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Vegan</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No meat, poultry, fish, dairy, eggs or honey"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 health-check">
+                  <label class="checkbox-button">
+                    <input
+                      type="checkbox"
+                      class="healt checkbox-button__input"
+                      value="vegetarian"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Vegetarian</span>
+                    <span
+                      class="control-info tooltip3"
+                      title="No meat, poultry, or fish"
+                    ></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown" id="heading4">
+              <h5 class="mb-0">
+                <button onclick="toggleDropdown('calDropdown')" class="dropbtn">
+                  Calories
+                </button>
+              </h5>
+              <div id="calDropdown" class="dropdown-content">
+                <!-- <div class="card-body"> -->
+                <div class="desc cal-check" style="text-align: left">
+                  Input maximum desired calories per serving.
+                  <p>Default serving is 100g.</p>
+                </div>
+                <!--input type="text" class="search cal"/> kcal -->
+                <div class="mdesc-cal">
+                  <div class="range-slider">
+                    <span class="mdescs"
+                      ><input type="text" class="search nut max" /> kcal</span
+                    >
+                  </div>
+                  <div class="range-check cal-check check-contain">
+                    <label class="checkbox-button">
+                      <input
+                        type="checkbox"
+                        class="nutrient-check checkbox-button__input"
+                        value="calories"
+                        data-measure="kcal"
+                      />
+                      <span class="checkbox-button__control"></span>
+                    </label>
+                  </div>
+                </div>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="dropdown" id="heading5">
+              <h5 class="mb-0">
+                <button
+                  onclick="toggleDropdown('nutriDropdown')"
+                  class="dropbtn"
+                >
+                  Nutrients
+                </button>
+              </h5>
+              <div
+                id="nutriDropdown"
+                class="dropdown-content"
+                style="max-width: 800px !important"
+              >
+                <div class="desc nutr" style="width: 500px">
+                  <h3>Macronutrients</h3>
+                  <div id="nutriDropdown" class="dropdown-content">
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="FAT"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Fat</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              g</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="FAT"
+                                data-measure="g"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> g</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="FASAT"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Saturated</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              g</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="FASAT"
+                                data-measure="g"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!--span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> g</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="FATRN"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Trans</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              g</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="FATRN"
+                                data-measure="g"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> g</span-->
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="FAMS"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label"
+                          >Monounsaturated</span
+                        >
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              g</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="FAMS"
+                                data-measure="g"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!--span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> g</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="FAPU"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label"
+                          >Polyunsaturated</span
+                        >
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              g</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="FAPU"
+                                data-measure="g"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!--span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> g</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="CHOCDF"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Carbs</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              g</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="CHOCDF"
+                                data-measure="g"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> g</span-->
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="FIBTG"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Fiber</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              g</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="FIBTG"
+                                data-measure="g"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> g</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="SUGAR"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Sugars</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              g</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="SUGAR"
+                                data-measure="g"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> g</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="PROCNT"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Protein</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              g</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="PROCNT"
+                                data-measure="g"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> g</span-->
+                      </label>
+                    </div>
+                  </div>
+                  <h3>Micronutrients</h3>
+                  <div class="row">
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="CHOLE"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Cholesterol</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="CHOLE"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!--span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="NA"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Sodium</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="NA"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="CA"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Calcium</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              g</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="CA"
+                                data-measure="g"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="MG"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Magnesium</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="MG"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="K"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Potassium</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="K"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="FE"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Iron</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="FE"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="P"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Phosphorus</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="P"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="VITA_RAE"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Vitamin A</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              μg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="VITA_RAE"
+                                data-measure="μg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> æg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="VITC"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Vitamin C</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="VITC"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="THIA"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Thiamin (B1)</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="THIA"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="RIBF"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label"
+                          >Riboflavin (B2)</span
+                        >
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="RIBF"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="NIA"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Niacin (B3)</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="NIA"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="VITB6A"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Vitamin B6</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="VITB6A"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="FOLDFE"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label"
+                          >Folate (Equivalent)</span
+                        >
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              μg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="FOLDFE"
+                                data-measure="μg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> æg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="VITB12"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Vitamin B12</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              μg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="VITB12"
+                                data-measure="μg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> æg</span-->
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="VITD"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Vitamin D</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              μg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="VITD"
+                                data-measure="μg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> æg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="TOCPHA"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Vitamin E</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              mg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="TOCPHA"
+                                data-measure="mg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> mg</span-->
+                      </label>
+                    </div>
+                    <div class="col-md-4 check-contain">
+                      <label class="checkbox-button">
+                        <input
+                          type="checkbox"
+                          class="nutrient checkbox-button__input"
+                          value="VITK1"
+                        />
+                        <span class="checkbox-button__control"></span>
+                        <span class="checkbox-button__label">Vitamin K</span>
+                        <span class="mdesc" style="display: none">
+                          <div class="checkbox-title">
+                            <span
+                              >Choose minimum and maximum values for a desired
+                              nutrient per serving. For individual foods, the
+                              default serving size is 100 g</span
+                            >
+                          </div>
+                          <div class="range-slider">
+                            <span class="mdescs"
+                              >min <input type="text" class="search nut min" />
+                              max
+                              <input type="text" class="search nut max" />
+                              μg</span
+                            >
+                          </div>
+                          <div class="range-check nutr-check check-contain">
+                            <label class="checkbox-button">
+                              <input
+                                type="checkbox"
+                                class="nutrient-check checkbox-button__input"
+                                value="VITK1"
+                                data-measure="μg"
+                              />
+                              <span class="checkbox-button__control"></span>
+                            </label>
+                          </div>
+                        </span>
+                        <!-- span class="mdesc">min <input type="text" class="search nut min"/> max <input type="text" class="search nut max"/> æg</span-->
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 center-col" id="center-div">
+          <div class="card-container" id="card-container"></div>
+        </div>
+        <!-- <div class="col-md-3 right-col bgr-row" id="right-div">
+                <div class="search-container" style="margin: 20px 0 0px 0px;">
+                    <button id="search-btn">Search</button>
+                </div>
+            </div> -->
+      </div>
+    </div>
+
+    <script src="/Public/index.js"></script>
+    <script src="/Api/api.js"></script>
+    <script>
+      // const dropdowns = document.querySelector('.dropdown');
+      // const dropdownContent = document.querySelector('.dropdown-content');
+
+      // dropdowns.addEventListener('click', () => {
+      //     dropdownContent.classList.toggle('show');
+      // });
+
+      // document.addEventListener('click', (event) => {
+      //     if (!dropdowns.contains(event.target)) {
+      //         dropdownContent.classList.remove('show');
+      //     }
+      // });
+    </script>
+    <!-- <script src="key.js"></script>
+    <script src="index.js"></script> -->
+  </body>
+</html>
