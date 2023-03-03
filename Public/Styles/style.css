@@ -38,6 +38,7 @@ body {
   width: 100%;
   height: 3em;
   padding: 5px;
+  border: 2px;
 }
 
 .search-container input,
@@ -293,4 +294,8 @@ p {
 
 .desc{
     font-size: small;
+}
+
+.meal-type{
+  display: inline-block;
 }

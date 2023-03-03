@@ -104,7 +104,7 @@
           <div
             class="card"
             style="
-              margin: 0px 0 20px 0px;
+              margin: 0 0 20px 0;
               display: flex;
               flex-direction: column;
               height: 67%;
@@ -113,89 +113,11 @@
             <div class="search-container" style="margin: 0px 0 0px 0px">
               <button id="search-btn">Search</button>
             </div>
-            <div class="meal-type">
-              <strong>Meal-Type</strong>
-              <div class="col-md-4 meal-check">
-                <label class="checkbox-button">
-                  <input
-                    type="checkbox"
-                    class="meal checkbox-button__input"
-                    value="breakfast"
-                  />
-                  <span class="checkbox-button__control"></span>
-                  <span class="checkbox-button__label">Breakfast</span>
-                  <span
-                    class="control-info tooltip3"
-                    title="No alcohol used or contained"
-                  ></span>
-                </label>
-              </div>
-              <div class="col-md-4 meal-check">
-                <label class="checkbox-button">
-                  <input
-                    type="checkbox"
-                    class="meal checkbox-button__input"
-                    value="brunch"
-                  />
-                  <span class="checkbox-button__control"></span>
-                  <span class="checkbox-button__label">Brunch</span>
-                  <span
-                    class="control-info tooltip3"
-                    title="No alcohol used or contained"
-                  ></span>
-                </label>
-              </div>
-              <div class="col-md-4 meal-check">
-                <label class="checkbox-button">
-                  <input
-                    type="checkbox"
-                    class="meal checkbox-button__input"
-                    value="lunch/dinner"
-                  />
-                  <span class="checkbox-button__control"></span>
-                  <span class="checkbox-button__label">Lunch/Dinner</span>
-                  <span
-                    class="control-info tooltip3"
-                    title="No alcohol used or contained"
-                  ></span>
-                </label>
-              </div>
-              <div class="col-md-4 meal-check">
-                <label class="checkbox-button">
-                  <input
-                    type="checkbox"
-                    class="meal checkbox-button__input"
-                    value="Snack"
-                  />
-                  <span class="checkbox-button__control"></span>
-                  <span class="checkbox-button__label">Snack</span>
-                  <span
-                    class="control-info tooltip3"
-                    title="No alcohol used or contained"
-                  ></span>
-                </label>
-              </div>
-              <div class="col-md-4 meal-check">
-                <label class="checkbox-button">
-                  <input
-                    type="checkbox"
-                    class="meal checkbox-button__input"
-                    value="Teatime"
-                  />
-                  <span class="checkbox-button__control"></span>
-                  <span class="checkbox-button__label">Teatime</span>
-                  <span
-                    class="control-info tooltip3"
-                    title="No alcohol used or contained"
-                  ></span>
-                </label>
-              </div>
-            </div>
             <div class="dropdown" id="heading1">
               <h5 class="mb-0">
                 <button
-                  onclick="toggleDropdown('searchDropdown')"
-                  class="dropbtn"
+                        onclick="toggleDropdown('searchDropdown')"
+                        class="dropbtn"
                 >
                   Searching by keyword
                 </button>
@@ -211,15 +133,102 @@
                 </div>
                 <div class="desc-title">Keywords</div>
                 <input
-                  type="text"
-                  placeholder="Type one or more keywords"
-                  class="search q"
+                        type="text"
+                        placeholder="Type one or more keywords"
+                        class="search q"
                 />
                 <span class="input-group-addon"
-                  ><i class="bx bx-sm bx-search-alt"></i
+                ><i class="bx bx-sm bx-search-alt"></i
                 ></span>
                 <!-- </div> -->
               </div>
+            </div>
+            <div class="dropdown" id="meal-type">
+              <h5 class="mb-0">
+                <button
+                        onclick="toggleDropdown('mealDropdown')"
+                        class="dropbtn"
+                >
+Meal-Type                </button>
+              </h5>
+              <div id="mealDropdown" class="dropdown-content">
+                <div class="col-md-4 meal-check">
+                  <label class="checkbox-button">
+                    <input
+                            type="checkbox"
+                            class="meal checkbox-button__input"
+                            value="breakfast"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Breakfast</span>
+                    <span
+                            class="control-info tooltip3"
+                            title="No alcohol used or contained"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 meal-check">
+                  <label class="checkbox-button">
+                    <input
+                            type="checkbox"
+                            class="meal checkbox-button__input"
+                            value="brunch"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Brunch</span>
+                    <span
+                            class="control-info tooltip3"
+                            title="No alcohol used or contained"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 meal-check">
+                  <label class="checkbox-button">
+                    <input
+                            type="checkbox"
+                            class="meal checkbox-button__input"
+                            value="lunch/dinner"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Lunch/Dinner</span>
+                    <span
+                            class="control-info tooltip3"
+                            title="No alcohol used or contained"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 meal-check">
+                  <label class="checkbox-button">
+                    <input
+                            type="checkbox"
+                            class="meal checkbox-button__input"
+                            value="Snack"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Snack</span>
+                    <span
+                            class="control-info tooltip3"
+                            title="No alcohol used or contained"
+                    ></span>
+                  </label>
+                </div>
+                <div class="col-md-4 meal-check">
+                  <label class="checkbox-button">
+                    <input
+                            type="checkbox"
+                            class="meal checkbox-button__input"
+                            value="Teatime"
+                    />
+                    <span class="checkbox-button__control"></span>
+                    <span class="checkbox-button__label">Teatime</span>
+                    <span
+                            class="control-info tooltip3"
+                            title="No alcohol used or contained"
+                    ></span>
+                  </label>
+                </div>
+              </div>
+
             </div>
             <div class="dropdown" id="heading2">
               <h5 class="mb-0">
@@ -802,7 +811,7 @@
               >
                 <div class="desc nutr" style="width: 500px">
                   <h3>Macronutrients</h3>
-                  <div id="nutriDropdown" class="dropdown-content">
+                  <div class="row">
                     <div class="col-md-4 check-contain">
                       <label class="checkbox-button">
                         <input

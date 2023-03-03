@@ -6,8 +6,15 @@ const queryParams = new URLSearchParams();
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const searchInput = document.querySelector(".search.q");
-const healthCheckboxes = document.querySelectorAll('.health-check input[type="checkbox"]');
-const dietCheckboxes = document.querySelectorAll('.diet-check input[type="checkbox"]');
+const healthCheckboxes = document.querySelectorAll(
+  '.health-check input[type="checkbox"]'
+);
+const dietCheckboxes = document.querySelectorAll(
+  '.diet-check input[type="checkbox"]'
+);
+const mealCheckboxes = document.querySelectorAll(
+  '.meal-check input[type="checkbox"]'
+);
 
 function addRecipes(item) {
   var cardContainer = document.getElementById("card-container");
@@ -39,6 +46,11 @@ function addRecipes(item) {
 // Add checkbox values to endpoint and keywords
 function updateApiEndpoint() {
   const queryParams = new URLSearchParams();
+  if (searchInput.value) {
+    queryParams.append("q", searchInput.value);
+  } else {
+    queryParams.delete("q");
+  }
 
   healthCheckboxes.forEach(function (checkbox) {
     if (checkbox.checked) {
@@ -75,6 +87,22 @@ function updateApiEndpoint() {
     }
   });
 
+  mealCheckboxes.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      queryParams.append("mealType", checkbox.value);
+    }
+  });
+
+  mealCheckboxes.forEach(function (checkbox) {
+    if (!checkbox.checked) {
+      queryParams.getAll("mealType").forEach(function (mealValue, index) {
+        if (mealValue === checkbox.value) {
+          queryParams.delete("mealType", index);
+        }
+      });
+    }
+  });
+
   // add other parameters to queryParams as needed
 
   const url = `${URL}&${queryParams.toString()}`;
@@ -91,7 +119,6 @@ checkboxes.forEach((checkbox) => {
 
 // Add keyword values to url
 searchInput.addEventListener("keydown", function (event) {
-  queryParams.delete("q");
   if (event.code === "Enter") {
     event.preventDefault();
     if (searchInput.value) {
@@ -101,7 +128,7 @@ searchInput.addEventListener("keydown", function (event) {
     url = encodeURI(url);
     console.log(encodeURI(url));
     // send request to API using updated url
-    //  finalUrl = `${url}&${creds}`;
+    // finalUrl = `${url}&${creds}`;
 
     window.localStorage.setItem("apiURL", url);
     // updateApiEndpoint();
