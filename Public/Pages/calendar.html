@@ -10,15 +10,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Public/Styles/nav.css">
     <link rel="stylesheet" href="/Public/Styles/style.css">
-    <link rel="stylesheet" href="/Public/Styles/calendar.css">
 
     <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="/Public/calendar.js"></script>
     <script src="/Public/nav.js"></script>
 
-    <title>Document</title>
+    <title>Eat Better</title>
 </head>
 
 <body>
@@ -51,24 +49,23 @@
     <div class="calendar-container">
         <div class="calendar-header">
             <select id="month-select">
-                <option value="0">January</option>
-                <option value="1">February</option>
-                <option value="2">March</option>
-                <!-- ... add options for all 12 months ... -->
             </select>
             <select id="year-select">
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <!-- ... add options for all years you want to support ... -->
             </select>
         </div>
+        <div id="calendar"></div>
         <div class="calendar-grid">
-            <!-- JavaScript code will generate the calendar cells here -->
+        </div>
+    </div>
+    <div id="info-card" class="info-card hidden">
+        <div class="info-card-content">
+            <button id="close-info-card">&times;</button>
+            <h2 id="info-card-title"></h2>
+            <p id="info-card-info"></p>
         </div>
     </div>
 
-
 </body>
-
+<script src="/Public/calendar.js"></script>
+<link rel="stylesheet" href="/Public/Styles/calendar.css">
 </html>

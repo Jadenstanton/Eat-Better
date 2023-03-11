@@ -1,5 +1,5 @@
 .calendar-container {
-    width: 300px;
+    width: 100%;
     border: 1px solid #ccc;
     font-family: Arial, sans-serif;
 }
@@ -36,6 +36,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+    height: 14vh;
 }
 
 .calendar-cell:hover {
@@ -44,4 +45,44 @@
 
 .calendar-cell.today {
     background-color: #e6f3ff;
+}
+.calendar-cell.today:hover {
+    background-color: lightskyblue;
+}
+
+.calendar-cell-past {
+    background-color: #f2f2f2;
+    color: #a0a0a0;
+}
+.calendar-cell-past:hover {
+    background-color: darkgray;
+    color: black;
+}
+
+.info-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.info-card.hidden {
+    display: none;
+}
+
+.info-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#close-info-card {
+    align-self: flex-end;
+    font-size: 1.5em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

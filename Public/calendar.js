@@ -10,7 +10,6 @@ const calendar = document.getElementById("calendar");
 const monthSelect = document.getElementById("month-select");
 const yearSelect = document.getElementById("year-select");
 
-// Set the options for the month and year select elements
 for (let i = 0; i < months.length; i++) {
     const option = document.createElement("option");
     option.value = i;
@@ -25,7 +24,6 @@ for (let i = today.getFullYear(); i <= today.getFullYear() + 5; i++) {
     yearSelect.appendChild(option);
 }
 
-// Define a function to generate the calendar grid for a given month and year
 function generateCalendar(month, year) {
     // Clear the existing calendar
     calendar.innerHTML = "";
@@ -65,8 +63,21 @@ function generateCalendar(month, year) {
         const cell = document.createElement("div");
         cell.className = "calendar-cell calendar-cell-day";
         cell.textContent = i;
+        if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+            cell.classList.add("today");
+        }
+        const currentDate = new Date();
+        if (currentDate > new Date(year, month, i)) {
+            cell.classList.add("calendar-cell-past");
+        }
         grid.appendChild(cell);
     }
+    grid.addEventListener("click", function (event) {
+        if (event.target.classList.contains("calendar-cell-day")) {
+            const date = event.target.textContent;
+            openInfoCard(date, month, year, event.target);
+        }
+    });
 
     // Add the empty cells after the last day of the month
     for (let i = lastDay.getDay(); i < 6; i++) {
@@ -75,7 +86,6 @@ function generateCalendar(month, year) {
         grid.appendChild(cell);
     }
 
-    // Append the grid to the calendar element
     calendar.appendChild(grid);
 }
 
@@ -94,3 +104,30 @@ yearSelect.addEventListener("change", function () {
     const year = parseInt(yearSelect.value);
     generateCalendar(month, year);
 });
+
+function openInfoCard(date, month, year, clickedDayElement) {
+    const infoCard = document.getElementById("info-card");
+    const title = document.getElementById("info-card-title");
+    const info = document.getElementById("info-card-info");
+
+    title.textContent = `${date} ${months[month]} ${year}`;
+    info.textContent = "Recipes cooked this week and weekly and daily calorie info.";
+
+    const clickedDayRect = clickedDayElement.getBoundingClientRect();
+    infoCard.style.top = `${clickedDayRect.top}px`;
+    infoCard.style.left = `${clickedDayRect.left}px`;
+    infoCard.style.width = `${clickedDayRect.width}px`;
+    infoCard.style.height = `${clickedDayRect.height}px`;
+
+    infoCard.classList.remove("hidden");
+
+    const closeButton = document.getElementById("close-info-card");
+    closeButton.addEventListener("click", function() {
+        closeInfoCard();
+    });
+}
+
+function closeInfoCard() {
+    const infoCard = document.getElementById("info-card");
+    infoCard.classList.add("hidden");
+}
