@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Monda', sans-serif;
 }
 
 body {
@@ -13,7 +12,7 @@ body {
 }
 
 .main-container {
-  font-size: 16px;
+  font-size: 32px;
   height: 70%;
   /* max-height: auto; */
   width: 100%;
@@ -21,7 +20,7 @@ body {
   margin-top: 78px;
   height: 100%;
   /* padding: 2em 0.9em; */
-  background-color: rgba(34, 35, 35, 0);
+  background-color: #c9a479;
   position: fixed;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -32,6 +31,7 @@ body {
 }
 
 .search-container {
+  background-color: #5a716c;
   display: flex;
   grid-template-columns: 9fr 3fr;
   gap: 1.2em;
@@ -50,7 +50,7 @@ body {
 
 .search-container button:hover,
 .search-container:focus {
-  background-color: #2980b9;
+  background-color: #5a716c;
 }
 
 .search-container input {
@@ -65,7 +65,7 @@ body {
 }
 
 .search-container button {
-  background-color: #dadae3;
+  background-color: #47505e;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -141,7 +141,6 @@ h3 {
 
 p {
   font-size: 0.9em;
-  font-weight: 300;
   line-height: 1.8em;
   text-align: justify;
   color: #a0a0a0;
@@ -169,7 +168,7 @@ p {
 
 .checkbox-button {
   cursor: pointer;
-  background: #56a7ee;
+  background: #c9a479;
   padding: 8px;
   border-radius: 5px;
   min-width: fit-content;
@@ -183,7 +182,7 @@ p {
 
 .control-info {
   display: inline-block;
-  background-color: #3995f1;
+  background-color: #8ab6af;
   color: #fff;
   width: 12px;
   height: 12px;
@@ -203,10 +202,16 @@ p {
   border-radius: 0 0.6em 0.6em 0;
 }
 
+.button-box{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+}
+
 .dropbtn {
-  background-color: #3498db;
+  background-color: #47505e;
   color: white;
-  padding: 30px;
+  padding: 20px;
   font-size: 16px;
   border: none;
   cursor: pointer;
@@ -214,16 +219,18 @@ p {
   height: 100%;
   font-size: large;
   font-weight: 400;
+  flex: 1;
 }
 
 .dropbtn:hover,
 .dropbtn:focus {
-  background-color: #2980b9;
+  background-color: #5a716c;
 }
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
@@ -257,10 +264,22 @@ p {
   display: block;
 }
 
+.card{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  display: flex;
+  box-sizing: border-box;
+}
+.card div {
+  flex: 1;
+}
 
 .card-container {
     width: 100%;
     height: 100vh;
+  /*display: flex;*/
     /* max-height: 740px; */
     /* display: grid; */
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
@@ -268,28 +287,36 @@ p {
     overflow-y: auto;
 }
 .recipeCard {
-    width: 300px;
+    width: 600px;
     height: 350px;
-    background-color: rgb(255, 255, 255);
+    /*background: linear-gradient(rgb(255, 255, 255) 50%, darkgray 50%);*/
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     margin: 0;
-    border-radius: 5px;
-    padding-top: 10px;
+    /*border-radius: 5px;*/
+    /*padding-top: 10px;*/
+  display: flex;
+  flex-direction: column;
+  /*table-layout: fixed;*/
+  /*overflow: auto;*/
+  /*display: flex;*/
 }
 
-.recipeCard p {
-  font-size: medium;
-  font-weight: 300;
+.image-div p {
+  font-size: 20px;
+  font-weight: 500;
   text-align: center;
+  display: inline-block;
   color: black;
+  /*padding-right: 100px;*/
+  flex: 1;
 }
-.recipeCard img {
-    margin-top: 40px;
-    display: block;
-    margin: auto;
+.image-div img {
+    margin-left: 20px;
+    display: inline-block;
     width: 150px;
     height: 150px;
     border-radius: 5px;
+
 }
 
 .desc{
@@ -298,4 +325,32 @@ p {
 
 .meal-type{
   display: inline-block;
+}
+
+.ingredient-div{
+  flex: 1;
+  height: 175px;
+  background-color: #5a716c;
+}
+.ingredient-list{
+  margin-top: 10px;
+}
+.ingredient{
+  font-size: 14px;
+
+}
+
+#center-div{
+
+}
+
+.image-div{
+  /*width: 100%;*/
+  /*height: 175px;*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  background-color: #e7eeea;
 }

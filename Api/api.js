@@ -19,6 +19,7 @@ const mealCheckboxes = document.querySelectorAll(
 function addRecipes(item) {
   var cardContainer = document.getElementById("card-container");
 
+
   let card = document.createElement("div");
   card.className = "recipeCard";
   // card.style.height = "200px";
@@ -27,17 +28,42 @@ function addRecipes(item) {
   card.style.margin = "10px";
   card.style.float = "left";
 
+  let cardHeader = document.createElement("div");
+  cardHeader.className = "image-div";
+
   let image = document.createElement("img");
   image.src = item.recipe.images.REGULAR.url;
 
   let title = document.createElement("p");
   title.textContent = item.recipe.label;
 
-  const calories = document.createElement("p");
-  // calories.textContent = `Calories: ${item.recipe.calories.toFixed(2)}`;
+  let ingredients = item.recipe.ingredients;
+  let myList = document.createElement("ul");
+  myList.className = "ingredient-list";
 
-  card.appendChild(image);
-  card.appendChild(title);
+    ingredients.forEach(function (ingredient){
+      let food = ingredient.text;
+      let listItem = document.createElement("li");
+      listItem.textContent = food;
+      listItem.className = "ingredient";
+      // Append the list item to the unordered list
+      myList.appendChild(listItem);
+    });
+
+
+  let ingredientDiv = document.createElement("div");
+  ingredientDiv.className = 'ingredient-div';
+  const calories = document.createElement("p");
+  calories.textContent = item.recipe.calories;
+
+  ingredientDiv.appendChild(myList);
+
+
+
+  cardHeader.appendChild(image);
+  cardHeader.appendChild(title);
+  card.appendChild(cardHeader)
+  card.appendChild(ingredientDiv);
   // card.appendChild(calories);
 
   cardContainer.appendChild(card);
