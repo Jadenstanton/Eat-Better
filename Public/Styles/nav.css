@@ -6,6 +6,11 @@ body{
 * {
 	margin: 0;
 	padding: 0;
+	--verdigris: #75b9beff;
+	--light-blue: #a8ccc9ff;
+	--ash-gray: #b3d6c6ff;
+	--tea-green: #dceab2ff;
+	--straw: #c7d66dff;
 }
 i {
 	margin-right: 10px;
@@ -16,7 +21,7 @@ i {
 	color: #fff;
 }
 .navbar-mainbg{
-	background-color: #47505e;
+	background-color: var(--verdigris);
 	padding: 0px;
 }
 #navbarSupportedContent{
@@ -101,7 +106,7 @@ i {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #47505e;
+    background-color: var(--verdigris);
 }
 .hori-selector .right:before{
 	bottom: 0;

@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background-color: #f2f2f2;
+    background-color: var(--ash-gray);
 }
 
 .calendar-header select {
@@ -40,14 +40,15 @@
 }
 
 .calendar-cell:hover {
-    background-color: #f2f2f2;
+    background-color: var(--ash-gray);
 }
 
 .calendar-cell.today {
-    background-color: #e6f3ff;
+    color: var(--tea-green);
+    background-color: var(--light-blue);
 }
 .calendar-cell.today:hover {
-    background-color: lightskyblue;
+    background-color: var(--verdigris);
 }
 
 .calendar-cell-past {

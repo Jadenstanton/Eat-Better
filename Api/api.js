@@ -37,6 +37,12 @@ function addRecipes(item) {
   let title = document.createElement("p");
   title.textContent = item.recipe.label;
 
+  let addButton = document.createElement("button");
+
+  // let plusSign = document.createElement("span");
+  // plusSign.className = "material-symbols-outlined";
+  // plusSign.textContent = "Add";
+
   let ingredients = item.recipe.ingredients;
   let myList = document.createElement("ul");
   myList.className = "ingredient-list";
@@ -58,10 +64,12 @@ function addRecipes(item) {
 
   ingredientDiv.appendChild(myList);
 
+  // addButton.appendChild(plusSign);
 
 
   cardHeader.appendChild(image);
   cardHeader.appendChild(title);
+  cardHeader.appendChild(addButton);
   card.appendChild(cardHeader)
   card.appendChild(ingredientDiv);
   // card.appendChild(calories);
@@ -133,8 +141,6 @@ function updateApiEndpoint() {
 
   const url = `${URL}&${queryParams.toString()}`;
   console.log(encodeURI(url));
-  // send request to API using updated url
-  // finalUrl = `${url}&${creds}`;
   window.localStorage.setItem("apiURL", url);
 }
 
@@ -147,17 +153,7 @@ checkboxes.forEach((checkbox) => {
 searchInput.addEventListener("keydown", function (event) {
   if (event.code === "Enter") {
     event.preventDefault();
-    if (searchInput.value) {
-      queryParams.append("q", searchInput.value);
-    }
-    let url = `${URL}&${queryParams.toString()}`;
-    url = encodeURI(url);
-    console.log(encodeURI(url));
-    // send request to API using updated url
-    // finalUrl = `${url}&${creds}`;
-
-    window.localStorage.setItem("apiURL", url);
-    // updateApiEndpoint();
+    updateApiEndpoint();
   }
 });
 

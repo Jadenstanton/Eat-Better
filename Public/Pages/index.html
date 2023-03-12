@@ -19,6 +19,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
     <link rel="stylesheet" href="/Public/Styles/nav.css" />
     <link rel="stylesheet" href="/Public/Styles/style.css" />
     <link
@@ -35,37 +36,11 @@
     ></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="/Public/nav.js"></script>
+    <script src="/Public/js/nav.js"></script>
     <title>Eat Better</title>
   </head>
 
   <body>
-    <!-- <div class="container">
-        <div class="container">
-            <div class="search-container">
-                <input type="text" id="movie-name" placeholder="Search">
-                <button id="search-btn">Search</button>
-            </div>
-            <div id="result"></div>
-        </div>
-    </div> -->
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="row">
-                    <div class="col-xs-3 facets-column">
-                        <div class="sticky-container lv">
-                            <p>hi</p>
-                        </div>
-                    </div>
-                    <div class="col-xs-9">
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div> -->
     <nav class="navbar navbar-expand-custom navbar-mainbg">
       <a class="navbar-brand navbar-logo" href="#">Home</a>
       <button
@@ -101,6 +76,9 @@
         </ul>
       </div>
     </nav>
+    <div class="main-header">
+      <p>Recipe Search and Browse</p>
+    </div>
     <div class="main-container">
       <div class="row" style="height: 100%">
         <div class="col-md-3 left-col" style="display: flex; position: sticky">
@@ -184,7 +162,7 @@ Meal-Type                </button>
                     <input
                             type="checkbox"
                             class="meal checkbox-button__input"
-                            value="lunch/dinner"
+                            value="dinner"
                     />
                     <span class="checkbox-button__control"></span>
                     <span class="checkbox-button__label">Lunch/Dinner</span>
@@ -1930,7 +1908,7 @@ Meal-Type                </button>
       </div>
     </div>
 
-    <script src="/Public/index.js"></script>
+    <script src="/Public/js/index.js"></script>
     <script src="/Api/api.js"></script>
     <script>
       // const dropdowns = document.querySelector('.dropdown');
