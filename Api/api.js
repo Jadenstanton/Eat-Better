@@ -15,6 +15,12 @@ const dietCheckboxes = document.querySelectorAll(
 const mealCheckboxes = document.querySelectorAll(
   '.meal-check input[type="checkbox"]'
 );
+const randCheckbox = document.querySelectorAll(
+    '.desc-title input[type="checkbox"]'
+);
+// const nutriCheckboxes = document.querySelectorAll(
+//     '.row input[type="checkbox"]'
+// );
 
 function addRecipes(item) {
   var cardContainer = document.getElementById("card-container");
@@ -59,10 +65,25 @@ function addRecipes(item) {
 
   let ingredientDiv = document.createElement("div");
   ingredientDiv.className = 'ingredient-div';
+  let nutritionDiv = document.createElement("div");
+  nutritionDiv.className = "nutrition-div";
   const calories = document.createElement("p");
-  calories.textContent = item.recipe.calories;
+  calories.textContent = "Cal:" + Math.round(item.recipe.calories);
+  // calories.style.display = "none";
+  const carbs = document.createElement("p");
+  carbs.textContent = "Carbs:" + Math.round(item.recipe.totalNutrients.CHOCDF.quantity) + item.recipe.totalNutrients.CHOCDF.unit;
+  // carbs.style.display = "none";
+  const protein = document.createElement("p");
+  protein.textContent = "Protein:" + Math.round(item.recipe.totalNutrients.PROCNT.quantity) + item.recipe.totalNutrients.PROCNT.unit;
+  // protein.style.display = "none";
+
+  nutritionDiv.appendChild(calories);
+  nutritionDiv.appendChild(carbs);
+  nutritionDiv.appendChild(protein);
+
 
   ingredientDiv.appendChild(myList);
+  ingredientDiv.appendChild(nutritionDiv)
 
   // addButton.appendChild(plusSign);
 
@@ -72,19 +93,64 @@ function addRecipes(item) {
   cardHeader.appendChild(addButton);
   card.appendChild(cardHeader)
   card.appendChild(ingredientDiv);
-  // card.appendChild(calories);
 
   cardContainer.appendChild(card);
 }
 
 // Add checkbox values to endpoint and keywords
-function updateApiEndpoint() {
+function updateApiEndpoint(flag) {
   const queryParams = new URLSearchParams();
   if (searchInput.value) {
     queryParams.append("q", searchInput.value);
+    // queryParams.append("random", true);
+
   } else {
     queryParams.delete("q");
+
   }
+  // TODO
+  // Add Randomize button capability
+  // if(randInput.){
+  //   queryParams.append("random", true);
+  // }else{
+  //   queryParams.delete("random");
+  // }
+
+  // TODO
+  // Add checkbox function for nutrients
+  // display when selected and not otherwise
+
+  // nutriCheckboxes.forEach(function (checkbox) {
+  //   const paragraph = document.querySelector(".nutrition-div").querySelectorAll("p");
+  //   console.log("hi");
+  //
+  //   paragraph.forEach(function (para){
+  //     if(checkbox.checked){
+  //       console.log("hey");
+  //       para.style.display = "block";
+  //     } else {
+  //       para.style.display = "none";
+  //     }
+  //   });
+  //
+  // });
+
+  randCheckbox.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      queryParams.append("random", true);
+    }
+  });
+
+  // remove the unchecked health checkbox value from the health parameter
+  randCheckbox.forEach(function (checkbox) {
+    if (!checkbox.checked) {
+      queryParams.getAll("rand").forEach(function (randValue, index) {
+        if (randValue === true) {
+          queryParams.delete("rand", index);
+        }
+      });
+    }
+  });
 
   healthCheckboxes.forEach(function (checkbox) {
     if (checkbox.checked) {

@@ -100,13 +100,24 @@
               <div id="searchDropdown" class="dropdown-content">
                 <!-- <div class="card-body"> -->
                 <div class="desc">
-                  Enter what you have eaten, like
+                  Enter what you have eaten or what you want to eat, like
                   <span>"coffee and croissant"</span> or
-                  <span>"chicken enchilada"</span> to see how it works. There's
-                  accurate, data tens of thousands of foods, including
-                  international dishes.
+                  <span>"chicken alfredo"</span> to see a recipe and/or nutrition facts.
                 </div>
-                <div class="desc-title">Keywords</div>
+                <div class="desc-title">Keywords<label class="checkbox-button">
+                  <input
+                          type="checkbox"
+                          class="rand checkbox-button__input"
+                          value="rand"
+                  />
+                  <span class="checkbox-button__control"></span>
+                  <span class="checkbox-button__label">Randomize</span>
+                  <span
+                          class="control-info tooltip3"
+                          title="Randomize Search"
+                  ></span>
+                </label>
+                </div>
                 <input
                         type="text"
                         placeholder="Type one or more keywords"
